@@ -1,0 +1,83 @@
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url("../assets/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Montserrat-BoldItalic;
+  src: url("../assets/Montserrat-BoldItalic.ttf");
+}
+
+body {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+  margin: 0px;
+}
+
+:root {
+  --boost-level: 100%;
+}
+
+#container {
+  position: absolute;
+  width: 512px;
+  height: 96px;
+  left: 704px;
+  top: 952px;
+}
+
+#container.hidden {
+  display: none;
+}
+
+#player-name-container {
+  height: 64px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #202225;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Montserrat-Bold;
+}
+
+#player-name {
+  line-height: 64px;
+  font-size: 36px;
+  text-align: center;
+}
+
+#other-container {
+  height: 32px;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: Montserrat-BoldItalic;
+  text-align: center;
+}
+
+#assist-container {
+  position: absolute;
+  width: 384px;
+  height: 32px;
+  background-color: #c80000;
+  left: 0px;
+  border-bottom-left-radius: 10px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#goal-speed-container {
+  background-color: #ffffff;
+  position: absolute;
+  left: 384px;
+  width: 128px;
+  height: 32px;
+  border-bottom-right-radius: 10px;
+  color:#202225;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

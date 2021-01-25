@@ -1,0 +1,221 @@
+:root {
+  --blue-boost-1-level: 100%;
+  --blue-boost-2-level: 100%;
+  --blue-boost-3-level: 100%;
+  --orange-boost-1-level: 100%;
+  --orange-boost-2-level: 100%;
+  --orange-boost-3-level: 100%;
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url("../assets/Montserrat-Bold.ttf");
+}
+
+body {
+  position: absolute;
+  overflow: hidden;
+  width: 1920px;
+  height: 1080px;
+  top: 0px;
+  left: 0px;
+  font-family: Montserrat-Bold;
+  color: white;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.team-boost-container {
+  position: absolute;
+  top: 745px;
+}
+
+.player {
+  width: 312px;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+
+.player.small {
+  width: 256px;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+
+.orange-boost {
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+.name-container {
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  background-color: #202225;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats-container {
+  background-color: #202225;
+  position: relative;
+  height: 48px;
+  width: 100%;
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+.player.small .stats-container {
+  height: 0px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.goals, .assists, .saves, .shots {
+  position: absolute;
+  top: 11px;
+  font-size: 22px;
+} 
+
+.goals {
+  left: 42px;
+}
+
+.assists {
+  left: 122px;
+}
+
+.saves {
+  left: 202px;
+}
+
+.shots {
+  left: 282px;
+}
+
+.boost {
+  position: absolute;
+  z-index: 2;
+  font-size: 22px;
+}
+
+.boost.blue {
+  left: 10px;
+}
+
+.boost.orange {
+  right: 10px;
+}
+
+.icon {
+  filter: invert(1);
+  width: 32px;
+  height: 32px;
+  top: 8px;
+  position: absolute;
+}
+
+.goal.icon {
+  left: 5px;
+}
+
+.assist.icon {
+  left: 85px;
+}
+
+.save.icon {
+  left: 165px;
+}
+
+.shot.icon {
+  left: 245px;
+}
+
+.boostbar-container {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  line-height: 32px;
+  background-color: rgba(25, 31, 31, 0.60);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.boostbar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.boostbar.blue:after {
+  content: '\A';
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0,113,255,1) 0%, rgba(255,255,255,1) 100%);
+  top:0;
+  bottom:0;
+  left:0;
+  transition: width 100ms linear;  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.boostbar.orange:before {
+  content:'\A';
+  position: absolute;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%,  rgba(244,128,3,1) 100%);
+  top:0; 
+  bottom:0;
+  right:0;  
+  transition: width 100ms linear;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#blue-boost-1-boostbar:after {
+  width: var(--blue-boost-1-level);
+}
+
+#blue-boost-2-boostbar:after {
+  width: var(--blue-boost-2-level);
+}
+
+#blue-boost-3-boostbar:after {
+  width: var(--blue-boost-3-level);
+}
+
+#orange-boost-1-boostbar:before {
+  width: var(--orange-boost-1-level);
+}
+
+#orange-boost-2-boostbar:before {
+  width: var(--orange-boost-2-level);
+}
+
+#orange-boost-3-boostbar:before {
+  width: var(--orange-boost-3-level);
+}
+
+#blue-boost-container {
+  left: 32px;
+  transition: left 1s ease;
+}
+
+#blue-boost-container.hidden {
+  left: -350px;
+  transition: left 1s ease;
+}
+
+#orange-boost-container {
+  right: 32px;
+  transition: right 1s ease;
+}
+
+#orange-boost-container.hidden {
+  right: -350px;
+  transition: right 1s ease;
+}

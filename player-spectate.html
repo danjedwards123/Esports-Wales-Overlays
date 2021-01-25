@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/WsSubscribers.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/player-spectate.css">
+  </head>
+  <body>
+    <div id="container" class="hidden">
+      <div id="player-name-container">
+        <div id="player-name"></div>
+      </div>
+
+      <div id="player-boost-bar-container">
+        <div id="player-speed"></div>
+        <div id="player-boost"></div>
+        <div id="player-boost-bar"></div>
+      </div>
+    </div>
+
+    <script>      
+      $(() => {
+        WsSubscribers.init(49322, false);
+        WsSubscribers.subscribe("game", "update_state", (d) => {
+          if (d['game']['hasTarget'] && !d['game']['isReplay']) {
+            let selectedPlayer = d['players'][d['game']['target']];
+
+            $("#player-name").text(selectedPlayer["name"].toUpperCase());
+            $("#player-speed").text(`${selectedPlayer['speed']} K/PH`);
+            $("#player-boost").text(selectedPlayer['boost']);
+            $("#player-speed").css("color", selectedPlayer['boost'] >= 85 ? "black" : "white");
+            $(':root').css("--boost-level", `${selectedPlayer['boost']}%`);
+
+            $("#container").removeClass("hidden");
+            if (selectedPlayer['team'] === 0) {
+              $("#container").removeClass("orange");
+              $("#container").addClass("blue");
+            } else {
+              $("#container").removeClass("blue");
+              $("#container").addClass("orange");
+            }
+          } else {
+            $("#container").removeClass("blue");
+            $("#container").removeClass("orange");
+            $("#container").addClass("hidden");
+          }
+        })
+      });
+
+      WsSubscribers.subscribe("game", "match_destroyed", (d) => {
+        $("#container").removeClass("blue");
+        $("#container").removeClass("orange");
+        $("#container").addClass("hidden");
+      });
+    </script>
+  </body>
+</html>

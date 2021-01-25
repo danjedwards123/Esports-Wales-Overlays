@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/WsSubscribers.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/all-players-boost.css">
+  </head>
+  <body>
+    <div id="blue-boost-container" class="team-boost-container hidden">
+      <div id="blue-boost-1" class="blue-boost player one small">
+        <div id="blue-boost-1-name-container" class=name-container>
+          <div id="blue-boost-1-name" class="name blue">Blue One</div>
+        </div>
+        <div id="blue-boost-1-stats-container" class="stats-container">
+          <div id="blue-boost-1-goals" class="goals blue">0</div>
+          <div id="blue-boost-1-assists" class="assists blue">0</div>
+          <div id="blue-boost-1-saves" class="saves blue">0</div>
+          <div id="blue-boost-1-shots" class="shots blue">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">
+        </div>
+        <div id="blue-boost-1-boostbar-container" class="boostbar-container">
+          <div id="blue-boost-1-boost" class="boost blue">100</div>
+          <div id="blue-boost-1-boostbar" class="boostbar blue"></div>
+        </div>
+      </div>
+      <div id="blue-boost-2" class="blue-boost player two small">
+        <div id="blue-boost-2-name-container" class=name-container>
+          <div id="blue-boost-2-name" class="name blue">Blue Two</div>
+        </div>
+        <div id="blue-boost-2-stats-container" class="stats-container">
+          <div id="blue-boost-2-goals" class="goals blue">0</div>
+          <div id="blue-boost-2-assists" class="assists blue">0</div>
+          <div id="blue-boost-2-saves" class="saves blue">0</div>
+          <div id="blue-boost-2-shots" class="shots blue">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">
+        </div>
+        <div id="blue-boost-2-boostbar-container" class="boostbar-container">
+          <div id="blue-boost-2-boostbar" class="boostbar blue"></div>
+          <div id="blue-boost-2-boost" class="boost blue">100</div>
+        </div>
+      </div>
+      <div id="blue-boost-3" class="blue-boost player three small">
+        <div id="blue-boost-3-name-container" class=name-container>
+          <div id="blue-boost-3-name" class="name blue">Blue Three</div>
+        </div>
+        <div id="blue-boost-3-stats-container" class="stats-container">
+          <div id="blue-boost-3-goals" class="goals blue">0</div>
+          <div id="blue-boost-3-assists" class="assists blue">0</div>
+          <div id="blue-boost-3-saves" class="saves blue">0</div>
+          <div id="blue-boost-3-shots" class="shots blue">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">
+        </div>
+        <div id="blue-boost-3-boostbar-container" class="boostbar-container">
+          <div id="blue-boost-3-boostbar" class="boostbar blue"></div>
+          <div id="blue-boost-3-boost" class="boost blue">100</div>
+        </div>
+      </div>
+    </div>
+    <div id="orange-boost-container" class="team-boost-container hidden">
+      <div id="orange-boost-1" class="orange-boost player one small">
+        <div id="orange-boost-1-name-container" class=name-container>
+          <div id="orange-boost-1-name" class="name orange">Orange One</div>
+        </div>
+        <div id="orange-boost-1-stats-container" class="stats-container">
+          <div id="orange-boost-1-goals" class="goals orange">0</div>
+          <div id="orange-boost-1-assists" class="assists orange">0</div>
+          <div id="orange-boost-1-saves" class="saves orange">0</div>
+          <div id="orange-boost-1-shots" class="shots orange">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">
+        </div>
+        <div id="orange-boost-1-boostbar-container" class="boostbar-container">
+          <div id="orange-boost-1-boostbar" class="boostbar orange"></div>
+          <div id="orange-boost-1-boost" class="boost orange">100</div>
+        </div>
+      </div>
+      <div id="orange-boost-2" class="orange-boost player two small">
+        <div id="orange-boost-2-name-container" class=name-container>
+          <div id="orange-boost-2-name" class="name orange">Orange Two</div>
+        </div>
+        <div id="orange-boost-2-stats-container" class="stats-container">
+          <div id="orange-boost-2-goals" class="goals orange">0</div>
+          <div id="orange-boost-2-assists" class="assists orange">0</div>
+          <div id="orange-boost-2-saves" class="saves orange">0</div>
+          <div id="orange-boost-2-shots" class="shots orange">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">
+        </div>
+        <div id="orange-boost-2-boostbar-container" class="boostbar-container">
+          <div id="orange-boost-2-boostbar" class="boostbar orange"></div>
+          <div id="orange-boost-2-boost" class="boost orange">100</div>
+        </div>
+      </div>
+      <div id="orange-boost-3" class="orange-boost player three small">
+        <div id="orange-boost-3-name-container" class=name-container>
+          <div id="orange-boost-3-name" class="name orange three">Orange Three</div>
+        </div>
+        <div id="orange-boost-3-stats-container" class="stats-container">
+          <div id="orange-boost-3-goals" class="goals orange">0</div>
+          <div id="orange-boost-3-assists" class="assists orange">0</div>
+          <div id="orange-boost-3-saves" class="saves orange">0</div>
+          <div id="orange-boost-3-shots" class="shots orange">0</div>
+          <img src="icons/stat-icons/goal.svg" class="goal icon">
+          <img src="icons/stat-icons/assist.svg" class="assist icon">
+          <img src="icons/stat-icons/save.svg" class="save icon">
+          <img src="icons/stat-icons/shot-on-goal.svg" class="shot icon">  
+        </div>
+        <div id="orange-boost-3-boostbar-container" class="boostbar-container">
+          <div id="orange-boost-3-boostbar" class="boostbar orange"></div>
+          <div id="orange-boost-3-boost" class="boost orange">100</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(() => {
+        WsSubscribers.init(49322, false);
+        WsSubscribers.subscribe("game", "update_state", (d) => {
+          let bluePlayers = [];
+          let orangePlayers = [];
+
+          for (let [player, playerData] of Object.entries(d["players"])) {
+            if (playerData["team"] === 0) {
+              bluePlayers.push(playerData);
+            } else {
+              orangePlayers.push(playerData);
+            }
+          }
+
+          for (let i = 0; i < bluePlayers.length && i < 4; i++) {
+            $(`#blue-boost-${i + 1}-name`).text(bluePlayers[i]['name']);
+            $(`#blue-boost-${i + 1}-boost`).text(bluePlayers[i]['boost']);
+            $(`#blue-boost-${i + 1}-goals`).text(bluePlayers[i]['goals']);
+            $(`#blue-boost-${i + 1}-assists`).text(bluePlayers[i]['assists']);
+            $(`#blue-boost-${i + 1}-saves`).text(bluePlayers[i]['saves']);
+            $(`#blue-boost-${i + 1}-shots`).text(bluePlayers[i]['shots']);
+            $(":root").css(`--blue-boost-${i + 1}-level`, bluePlayers[i]['boost'] + "%");
+            $(`#blue-boost-${i + 1}`).css("display", "block");
+
+            if (d['game']['hasTarget'] && !d['game']['isReplay']) {
+              let selectedPlayer = d['players'][d['game']['target']];
+              if (selectedPlayer['id'] === bluePlayers[i]['id']) {
+                $(`#blue-boost-${i + 1}`).removeClass("small");
+              } else {
+                $(`#blue-boost-${i + 1}`).addClass("small");
+              }
+            } else {
+              $(`#blue-boost-${i + 1}`).addClass("small");
+            }
+          }
+
+          for (let i = bluePlayers.length; i < 3; i++) {
+            $(`#blue-boost-${i + 1}`).css("display", "none");
+          }
+
+          for (let i = 0; i < orangePlayers.length && i < 4; i++) {
+            $(`#orange-boost-${i + 1}-name`).text(orangePlayers[i]['name']);
+            $(`#orange-boost-${i + 1}-boost`).text(orangePlayers[i]['boost']);
+            $(`#orange-boost-${i + 1}-goals`).text(orangePlayers[i]['goals']);
+            $(`#orange-boost-${i + 1}-assists`).text(orangePlayers[i]['assists']);
+            $(`#orange-boost-${i + 1}-saves`).text(orangePlayers[i]['saves']);
+            $(`#orange-boost-${i + 1}-shots`).text(orangePlayers[i]['shots']);
+            $(":root").css(`--orange-boost-${i + 1}-level`, orangePlayers[i]['boost'] + "%");
+            $(`#orange-boost-${i + 1}`).css("display", "block");
+
+            if (d['game']['hasTarget'] && !d['game']['isReplay']) {
+              let selectedPlayer = d['players'][d['game']['target']];
+              if (selectedPlayer['id'] === orangePlayers[i]['id']) {
+                $(`#orange-boost-${i + 1}`).removeClass("small");
+              } else {
+                $(`#orange-boost-${i + 1}`).addClass("small");
+              }
+            } else {
+              $(`#orange-boost-${i + 1}`).addClass("small");
+            }
+          }
+
+          for (let i = orangePlayers.length; i < 3; i++) {
+            $(`#orange-boost-${i + 1}`).css("display", "none");
+          }
+        })
+
+        WsSubscribers.subscribe("game", "post_countdown_begin", (d) => {
+          setTimeout(function() {
+            $("#blue-boost-container").removeClass("hidden");
+            $("#orange-boost-container").removeClass("hidden");
+          }, 3500);
+        });
+
+        WsSubscribers.subscribe("game", "match_ended", (d) => {
+          setTimeout(function() {
+            $("#blue-boost-container").addClass("hidden");
+            $("#orange-boost-container").addClass("hidden");
+          }, 1000);
+        });
+
+        WsSubscribers.subscribe("game", "match_destroyed", (d) => {
+          setTimeout(function() {
+            $("#blue-boost-container").addClass("hidden");
+            $("#orange-boost-container").addClass("hidden");
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>

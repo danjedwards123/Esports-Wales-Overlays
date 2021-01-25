@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/WsSubscribers.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/replay-spectate.css">
+  </head>
+  <body>
+    <div id="container" style="display: none;">
+      <div id="player-name-container">
+        <div id="player-name"></div>
+      </div>
+
+      <div id="other-container">
+        <div id="assist-container">
+          <div id="assist-text"></div>
+        </div>
+        <div id="goal-speed-container">
+          <div id="goal-speed"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>      
+      $(() => {
+        let goalInfo = {}
+        let goalAssister;
+        let players = {};
+
+        WsSubscribers.init(49322, false);
+        WsSubscribers.subscribe("game", "update_state", (d) => {
+          players = d["players"];
+        });
+
+        WsSubscribers.subscribe("game", "goal_scored", (d) => {
+          goalInfo = d;
+          goalAssister = undefined;
+        });
+
+        WsSubscribers.subscribe("game", "statfeed_event", (d) => {
+          if (d["type"] === "Assist") {
+            goalAssister = players[d["main_target"]["id"]];
+          }
+        });
+
+        WsSubscribers.subscribe("game", "replay_start", (d) => {
+          $("#player-name").text(goalInfo["scorer"]["name"].toUpperCase());
+          $("#assist-text").text(goalAssister !== undefined ? `ASSIST: ${goalAssister["name"].toUpperCase()}` : `UNASSISTED`);
+          $("#goal-speed").text(parseInt(goalInfo["goalspeed"]) !== 0 ? `${parseInt(goalInfo["goalspeed"])} K/PH` : `${parseInt(goalInfo["ball_last_touch"]["speed"])} K/PH`);
+          $("#container").css("display", "block");
+          $("body").css("background", "url(../assets/replay-banner.png)");
+        });
+
+        WsSubscribers.subscribe("game", "replay_end", (d) => {
+          $("#container").css("display", "none");
+          $("body").css("background", "");
+        });
+
+        WsSubscribers.subscribe("game", "match_destroyed", (d) => {
+          $("#container").css("display", "none");
+          $("body").css("background", "");
+        });
+      });
+    </script>
+  </body>
+</html>

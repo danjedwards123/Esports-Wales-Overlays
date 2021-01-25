@@ -1,0 +1,90 @@
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url("../assets/Montserrat-Bold.ttf");
+}
+
+:root {
+  --boost-level: 100%;
+}
+
+body {
+  font-family: Montserrat-Bold;
+}
+
+#container {
+  position: absolute;
+  width: 512px;
+  height: 96px;
+  left: 704px;
+  top: 952px;
+}
+
+#container.hidden {
+  display: none;
+}
+
+#player-name-container {
+  height: 64px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #202225;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#player-name {
+  line-height: 64px;
+  font-size: 36px;
+  text-align: center;
+}
+
+#player-boost-bar-container {
+  background-color: rgba(25, 31, 31, 0.60);
+  color: white;
+  height: 32px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 24px;
+}
+
+#player-speed {
+  position: absolute;
+  right: 10px;
+  line-height: 32px;
+  z-index: 5;
+}
+
+#player-boost {
+  position: absolute;
+  left: 10px;
+  line-height: 32px;
+  z-index: 5;
+}
+
+#player-boost-bar {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+#player-boost-bar:after {
+  content: '\A';
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  transition: width 100ms linear;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: var(--boost-level);
+  height: 32px;
+}
+
+#container.orange #player-boost-bar:after {
+  background: linear-gradient(90deg, rgba(244,128,3,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#container.blue #player-boost-bar:after {
+  background: linear-gradient(90deg, rgba(0,113,255,1) 0%, rgba(255,255,255,1) 100%);
+}
