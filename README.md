@@ -5,9 +5,7 @@
 #### Custom in-game overlays (requires SOS Overlay System)
 
 
-* [Scorebug Bo3](scorebug-bo3.html)
-* [Scorebug Bo5](scorebug-bo5.html)
-* [Scorebug Bo7](scorebug-bo7.html)
+* [Scorebug](scorebug.html)
 
 * [Eventfeed](eventfeed.html)
 * [Player Spectate](player-spectate.html)
