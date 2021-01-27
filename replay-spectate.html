@@ -48,7 +48,7 @@
           $("#assist-text").text(goalAssister !== undefined ? `ASSIST: ${goalAssister["name"].toUpperCase()}` : `UNASSISTED`);
           $("#goal-speed").text(parseInt(goalInfo["goalspeed"]) !== 0 ? `${parseInt(goalInfo["goalspeed"])} K/PH` : `${parseInt(goalInfo["ball_last_touch"]["speed"])} K/PH`);
           $("#container").css("display", "block");
-          $("body").css("background", "url(../assets/replay-banner.png)");
+          $("body").css("background", "url(assets/replay-banner.png)");
         });
 
         WsSubscribers.subscribe("game", "replay_end", (d) => {
