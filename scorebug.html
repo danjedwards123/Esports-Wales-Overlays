@@ -32,8 +32,8 @@
         if (d['game']['time'] < 0) {
           timeText += "0:00"
         } else {
-          timeText += parseInt(Math.ceil(d['game']['time']) / 60) + ":";
-          timeText += ("0" + Math.ceil(d['game']['time'] - (parseInt(Math.ceil(d['game']['time']) / 60) * 60))).slice(-2);
+          timeText += parseInt(Math.ceil(d['game']['time_seconds']) / 60) + ":";
+          timeText += ("0" + Math.ceil(d['game']['time_seconds'] - (parseInt(Math.ceil(d['game']['time_seconds']) / 60) * 60))).slice(-2);
         }
 
         $("#timer").text(timeText);
